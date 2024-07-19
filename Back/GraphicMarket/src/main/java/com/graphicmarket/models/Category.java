@@ -102,4 +102,7 @@ public class Category {
 	@PreUpdate
 	protected void onUpdate() {
 		this.updatedAt = new Date();
+	}
+	
 }
+
