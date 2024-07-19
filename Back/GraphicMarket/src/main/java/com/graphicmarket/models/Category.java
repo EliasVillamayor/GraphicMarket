@@ -38,10 +38,10 @@ public class Category {
 	@ManyToMany(fetch=FetchType.LAZY)
 	@JoinTable(
 				name="product-has-categories",
-				joinColumns=@JoinColumn(name="categoria_id"),
-				inverseJoinColumns=@JoinColumn(name="producto_id")	
+				joinColumns=@JoinColumn(name="category_id"),
+				inverseJoinColumns=@JoinColumn(name="product_id")	
 			)
-	private List<Producto> productos;
+	private List<Product> products;
 		
 	@Column(updatable=false) 
 	@DateTimeFormat(pattern="yyyy-MM-dd")
@@ -70,12 +70,12 @@ public class Category {
 		this.name = name;
 	}
 
-	public List<Producto> getProductos() {
-		return productos;
+	public List<Product> getProducts() {
+		return products;
 	}
 
-	public void setProductos(List<Producto> productos) {
-		this.productos = productos;
+	public void setProductos(List<Product> products) {
+		this.products = products;
 	}
 
 	public Date getCreatedAt() {

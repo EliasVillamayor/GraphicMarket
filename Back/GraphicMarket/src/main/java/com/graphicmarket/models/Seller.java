@@ -30,6 +30,8 @@ public class Seller {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
+	private String profilePicture;
+	
 	@NotNull(message="Se requiere un nombre")
 	@Size(max=40, message="el nombre ingresado demasiado largo")
 	private String name;
@@ -131,6 +133,32 @@ public class Seller {
 		this.updatedAt = updatedAt;
 	}
 	
+	
+	
+	public String getProfilePicture() {
+		return profilePicture;
+	}
+
+	public void setProfilePicture(String profilePicture) {
+		this.profilePicture = profilePicture;
+	}
+
+	public String getAboutMe() {
+		return aboutMe;
+	}
+
+	public void setAboutMe(String aboutMe) {
+		this.aboutMe = aboutMe;
+	}
+
+	public List<Product> getSellerProducts() {
+		return sellerProducts;
+	}
+
+	public void setSellerProducts(List<Product> sellerProducts) {
+		this.sellerProducts = sellerProducts;
+	}
+
 	@PrePersist
 	protected void onCreate() {
 		this.createdAt = new Date();
